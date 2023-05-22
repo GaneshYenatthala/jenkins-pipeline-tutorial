@@ -1,5 +1,7 @@
 pipeline {
-    agent 'slave-for-all' 
+    agent {
+        label 'slave-for-all'
+    } 
     stages {
         stage('Static Analysis') {
             steps {
