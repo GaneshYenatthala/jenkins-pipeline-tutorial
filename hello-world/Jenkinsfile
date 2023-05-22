@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent 'slave-for-all' 
     stages {
         stage('Static Analysis') {
             steps {
@@ -29,6 +29,11 @@ pipeline {
         stage('Publish Artifacts') {
             steps {
                 echo 'Save the assemblies generated from the compilation' 
+            }
+        }
+        stage('Send Mail') {
+            steps {
+                echo 'Mail sent to user succesfully'
             }
         }
     }
